@@ -1,4 +1,4 @@
-function TransactionList() {
+function TransactionList({transactions}) {
     return(
         <div>
             <h2>Transactions</h2>

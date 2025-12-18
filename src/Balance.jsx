@@ -1,4 +1,4 @@
-function Balance() {
+function Balance({ transactions }) {
     return(
         <div>
             <h2>Balance</h2>
