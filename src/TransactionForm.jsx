@@ -1,8 +1,18 @@
 function TransactionForm() {
     return(
-        <div>
+        <form>
             <h2>Add Transaction</h2>
-        </div>
+
+            <input type="text" placeholder=""/>
+            <input type="number" placeholder="" />
+
+            <select>
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+            </select>
+
+            <button>Add</button>
+        </form>
     )
     
 }
