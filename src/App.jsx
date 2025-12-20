@@ -8,7 +8,7 @@ function App() {
   const [transactions, setTransactions] = useState([])
 
   return (
-      <div>
+      <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
