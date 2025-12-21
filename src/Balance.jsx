@@ -11,13 +11,20 @@ function Balance({ transactions }) {
     const balance= income - expense
 
     return(
-        <div>
-
+        <div className="balance-container">
           <h2>Balance</h2>
-          <p>Total: {balance}</p>
-          <p>Income: {income}</p>
-          <p>Expense: {expense}</p>
+          <p className="balance"> Rs: {balance}</p>
+          <div className="income-expense-container">
+            <div className="income">
+              <h3>Income</h3>
+              <p>Rs: {income}</p>
+            </div>
 
+            <div className="expense">
+              <h3>Expense</h3>
+              <p>Rs: {expense}</p>
+            </div>
+          </div>
         </div>
     )
     
