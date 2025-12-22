@@ -27,9 +27,13 @@ function App() {
       setTransactions(updatedTransactions)
   }
 
-  const filteredTransactions= setSelectedCategory ==="All" ? transactions : transactions.filter(
+  const filteredTransactions= selectedCategory ==="All" ? transactions : transactions.filter(
                                                                               (item) => item.category === selectedCategory
                                                                            )
+  console.log(transactions)
+  
+  console.log(selectedCategory)
+  
 
   return (
       <div className="main-container">

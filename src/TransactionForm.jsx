@@ -5,7 +5,7 @@ function TransactionForm({transactions, setTransactions}) {
     const [text, setText] = useState("")
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
-    const [category, setCategory] = useState("food")
+    const [category, setCategory] = useState("Food")
 
     function addTransaction(e) {
         e.preventDefault()
