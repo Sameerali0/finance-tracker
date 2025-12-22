@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Balance from "./Balance";
 import TransactionForm from "./TransactionForm";
 import TransactionList from "./TransactionList";
+import CategoryFilter from "./CategoryFilter";
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
       const saved = localStorage.getItem("transactions")
       return saved ? JSON.parse(saved):[];
   })
+
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
   useEffect(()=>{
       localStorage.setItem("transactions", JSON.stringify(transactions))
@@ -24,12 +27,17 @@ function App() {
       setTransactions(updatedTransactions)
   }
 
+  const filteredTransactions= setSelectedCategory ==="All" ? transactions : transactions.filter(
+                                                                              (item) => item.category === selectedCategory
+                                                                           )
+
   return (
       <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
-        <TransactionList transactions={transactions} deleteTransaction={deleteTransaction}/>
+        <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+        <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
       </div>
   )
 }
