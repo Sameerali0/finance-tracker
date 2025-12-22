@@ -15,12 +15,21 @@ function App() {
       localStorage.setItem("transactions", JSON.stringify(transactions))
   }, [transactions])
 
+  function deleteTransaction(id){
+      
+      const updatedTransactions = transactions.filter(
+        (item)=> item.id !== id
+      )
+      
+      setTransactions(updatedTransactions)
+  }
+
   return (
       <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
-        <TransactionList transactions={transactions}/>
+        <TransactionList transactions={transactions} deleteTransaction={deleteTransaction}/>
       </div>
   )
 }
