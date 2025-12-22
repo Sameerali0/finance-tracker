@@ -7,7 +7,7 @@ function TransactionList({transactions, deleteTransaction}) {
             <ul>
                 {transactions.map((item)=>(
                     <li key={item.id} className={item.type === "income" ? "income" : "expense"}>
-                        {item.text} - Rs {item.amount} - ({item.type})
+                        {item.text} - Rs {item.amount} - ({item.type}) ({item.category})
                         <button onClick={()=> deleteTransaction(item.id)}>del</button>
                     </li>
                 ))}

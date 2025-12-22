@@ -5,6 +5,7 @@ function TransactionForm({transactions, setTransactions}) {
     const [text, setText] = useState("")
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
+    const [category, setCategory] = useState("food")
 
     function addTransaction(e) {
         e.preventDefault()
@@ -20,6 +21,7 @@ function TransactionForm({transactions, setTransactions}) {
             text,
             amount: Number(amount),
             type,
+            category,
 
         }
 
@@ -40,6 +42,15 @@ function TransactionForm({transactions, setTransactions}) {
             <select value={type} onChange={(e)=> setType(e.target.value)}>
                 <option value="expense">Expense</option>
                 <option value="income">Income</option>
+            </select>
+
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option value="Food">Food</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Rent">Rent</option>
+                <option value="Salary">Salary</option>
+                <option value="Traveling">Traveling</option>
+                <option value="Other">Other</option>
             </select>
 
             <button>Add</button>
