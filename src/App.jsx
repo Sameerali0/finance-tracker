@@ -3,6 +3,7 @@ import Balance from "./Balance";
 import TransactionForm from "./TransactionForm";
 import TransactionList from "./TransactionList";
 import CategoryFilter from "./CategoryFilter";
+import MonthFilter from "./MonthFilter";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   })
 
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [selectedMonth, setSelectedMonth] = useState("All")
 
   useEffect(()=>{
       localStorage.setItem("transactions", JSON.stringify(transactions))
@@ -41,6 +43,7 @@ function App() {
         <Balance transactions={transactions}/>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+        <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
         <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
       </div>
   )
