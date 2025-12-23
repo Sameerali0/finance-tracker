@@ -6,6 +6,7 @@ function TransactionForm({transactions, setTransactions}) {
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
     const [category, setCategory] = useState("Food")
+    const [date, setDate] = useState("")
 
     function addTransaction(e) {
         e.preventDefault()
@@ -22,7 +23,8 @@ function TransactionForm({transactions, setTransactions}) {
             amount: Number(amount),
             type,
             category,
-
+            date,
+            
         }
 
         setTransactions([newTransaction, ...transactions])
@@ -38,6 +40,7 @@ function TransactionForm({transactions, setTransactions}) {
         <form onSubmit={addTransaction}>
             <input type="text" placeholder="Enter description" value={text} onChange={(e)=> setText(e.target.value)}/>
             <input type="number" placeholder="Enter amount" value={amount} onChange={(e)=> setAmount(e.target.value)}/>
+            <input type="date" value={date} onChange={(e)=> setDate(e.target.value)}/>
 
             <select value={type} onChange={(e)=> setType(e.target.value)}>
                 <option value="expense">Expense</option>
