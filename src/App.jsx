@@ -29,9 +29,16 @@ function App() {
       setTransactions(updatedTransactions)
   }
 
-  const filteredTransactions= selectedCategory ==="All" ? transactions : transactions.filter(
-                                                                              (item) => item.category === selectedCategory
-                                                                           )
+  
+  const filteredTransactions= transactions.filter((item) =>{
+
+      const categoryMatch= selectedCategory=== "All" || item.category === selectedCategory
+      const monthMacth= selectedMonth=== "All" || (item.date && item.date.split("-")[1] === selectedMonth)
+
+      return categoryMatch && monthMacth
+
+  })
+   
   console.log(transactions)
   
   console.log(selectedCategory)
