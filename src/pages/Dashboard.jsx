@@ -5,7 +5,7 @@ import TransactionList from "../TransactionList";
 import CategoryFilter from "../CategoryFilter";
 import MonthFilter from "../MonthFilter";
 
-function App() {
+function Dashboard() {
 
   const [transactions, setTransactions] = useState(() =>{
 
@@ -56,4 +56,4 @@ function App() {
   )
 }
 
-export default App
+export default Dashboard
