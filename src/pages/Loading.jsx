@@ -9,7 +9,7 @@ function Loading(){
 
         const timer= setTimeout(()=>{
 
-            goTo("/app")
+            goTo("/app", {replace: true})
 
         }, 1000)
 
