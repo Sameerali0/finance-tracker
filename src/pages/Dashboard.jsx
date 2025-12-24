@@ -4,6 +4,7 @@ import TransactionForm from "../TransactionForm";
 import TransactionList from "../TransactionList";
 import CategoryFilter from "../CategoryFilter";
 import MonthFilter from "../MonthFilter";
+import ExpenseChart from "../charts/ExpenseChart";
 
 function Dashboard() {
 
@@ -51,6 +52,7 @@ function Dashboard() {
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
+        <ExpenseChart transactions={filteredTransactions}/>
         <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
       </div>
   )
