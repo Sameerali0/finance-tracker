@@ -18,6 +18,7 @@ function Dashboard() {
 
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedMonth, setSelectedMonth] = useState("All")
+  const [showForm, setShowForm] = useState(false)
 
   useEffect(()=>{
       localStorage.setItem("transactions", JSON.stringify(transactions))
@@ -52,7 +53,13 @@ function Dashboard() {
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
         <button className="Chart-btn" onClick={() => goTo("/chart", {state: {transactions}})}>View Expense</button>
-        <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
+        <button onClick={()=> setShowForm(true)}>+</button>
+        {showForm && (
+            <div>
+              <h2>Add Transaction</h2>
+              <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
+            </div>
+        )}
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
         <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
