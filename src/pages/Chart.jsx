@@ -1,10 +1,14 @@
+import { useLocation } from "react-router-dom";
 import ExpenseChart from "../charts/ExpenseChart";
 
-function Chart({transactions}){
+function Chart(){
+
+    const {state} = useLocation()
+    const transactions = state?.transactions || []
 
     return(
         <div className="chart-container">
-                <ExpenseChart transactions={transactions}/>
+            <ExpenseChart transactions={transactions}/>
         </div>
     )
 }

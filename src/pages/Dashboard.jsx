@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Balance from "../Balance";
 import TransactionForm from "../TransactionForm";
 import TransactionList from "../TransactionList";
 import CategoryFilter from "../CategoryFilter";
 import MonthFilter from "../MonthFilter";
-import ExpenseChart from "../charts/ExpenseChart";
 
 function Dashboard() {
+
+  const goTo= useNavigate()
 
   const [transactions, setTransactions] = useState(() =>{
 
@@ -49,7 +51,7 @@ function Dashboard() {
       <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
-        <button className="Chart-btn" onClick={() => goTo("/chart")}>View Expense</button>
+        <button className="Chart-btn" onClick={() => goTo("/chart", {state: {transactions}})}>View Expense</button>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
