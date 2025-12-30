@@ -11,7 +11,7 @@ function Loading(){
 
             goTo("/app", {replace: true})
 
-        }, 100000)
+        }, 3000)
 
         return()=> clearTimeout(timer)
 
