@@ -11,14 +11,15 @@ function Loading(){
 
             goTo("/app", {replace: true})
 
-        }, 1000)
+        }, 100000)
 
         return()=> clearTimeout(timer)
 
     }, [goTo])
     
     return(
-        <div>
+        <div className="loading-container">
+            <div className="loader"></div>
             <h2>Loading...</h2>
         </div>
     )
