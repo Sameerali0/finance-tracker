@@ -49,10 +49,10 @@ function Dashboard() {
       <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
+        <button className="Chart-btn" onClick={() => goTo("/chart")}>View Expense</button>
         <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
-        <ExpenseChart transactions={filteredTransactions}/>
         <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
       </div>
   )
