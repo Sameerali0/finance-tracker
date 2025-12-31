@@ -258,14 +258,9 @@ li.expense{
     border: none;
     cursor: pointer;
     background: #2c5364;
+    color: white;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-}
-
-.welcome-card button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background-color: #256986;
 }
 
 @keyframes fadeIn{
@@ -415,6 +410,8 @@ li.expense{
     color: white;
     cursor: pointer;
     width: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 
 }
 
@@ -429,20 +426,22 @@ li.expense{
     background: #2c5364;
     color: white;
     cursor: pointer;
-    transition: all 0.25s ease;
+    /* transition: all 0.25s ease; */
     border: 1px solid white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 
 }
 
 
-.transaction-add-btn:hover, .chart-btn:hover{
+.transaction-add-btn:hover, .chart-btn:hover, .welcome-card button:hover{
 
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 
 }
 
-.transaction-add-btn:active , .chart-btn:active{
+.transaction-add-btn:active , .chart-btn:active, .welcome-card button:active{
 
     transform: scale(0.97);
 
