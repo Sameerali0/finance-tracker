@@ -418,14 +418,31 @@ li.expense{
 
 }
 
-.transaction-add-btn:hover{
+
+.chart-btn{
+
+    padding: 15px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 17px;
+    border: none;
+    background: #2c5364;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid white;
+
+}
+
+
+.transaction-add-btn:hover, .chart-btn:hover{
 
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 
 }
 
-.transaction-add-btn:active{
+.transaction-add-btn:active , .chart-btn:active{
 
     transform: scale(0.97);
 
