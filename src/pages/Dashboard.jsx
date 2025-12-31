@@ -53,11 +53,13 @@ function Dashboard() {
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
         <button className="Chart-btn" onClick={() => goTo("/chart", {state: {transactions}})}>View Expense</button>
-        <button onClick={()=> setShowForm(true)}>+</button>
+        <button className="transaction-form-btn" onClick={()=> setShowForm(true)}>+</button>
         {showForm && (
-            <div>
-              <h2>Add Transaction</h2>
-              <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
+            <div className="transaction-form">
+              <div className="transaction-form-card">
+                <h2>Add Transaction</h2>
+                <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
+              </div>
             </div>
         )}
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
