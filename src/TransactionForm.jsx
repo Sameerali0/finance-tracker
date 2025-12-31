@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function TransactionForm({transactions, setTransactions, editTransaction, setEditTransaction}) {
+function TransactionForm({transactions, setTransactions, editTransaction, setEditTransaction, closeForm}) {
 
     const [text, setText] = useState("")
     const [amount, setAmount] = useState("")
@@ -55,6 +55,11 @@ function TransactionForm({transactions, setTransactions, editTransaction, setEdi
 
         setText("")
         setAmount("")
+        setType("expense")
+        setCategory("Food")
+        setDate("")
+
+        closeForm()
 
     }
 
@@ -98,6 +103,7 @@ function TransactionForm({transactions, setTransactions, editTransaction, setEdi
             </div>
 
             <button className="transaction-add-btn">{editTransaction ? "Update Transaction" : "Add Transaction"}</button>
+            <button className="cancel-btn" onClick={closeForm}>Cancel</button>
         </form>
         </div>
     )

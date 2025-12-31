@@ -21,6 +21,13 @@ function Dashboard() {
   const [showForm, setShowForm] = useState(false)
   const [editTransaction, setEditTransaction] = useState(null)
 
+  function closeForm(){
+
+      setShowForm(false)
+      setEditTransaction(null)
+
+  }
+
   useEffect(()=>{
       localStorage.setItem("transactions", JSON.stringify(transactions))
   }, [transactions])
@@ -65,7 +72,7 @@ function Dashboard() {
             <div className="transaction-form">
               <div className="transaction-form-card">
                 <h2>{editTransaction? "Edit Transaction" : "Add Transaction"}</h2>
-                <TransactionForm transactions={transactions} setTransactions={setTransactions} editTransaction={editTransaction} setEditTransaction={setEditTransaction}/>
+                <TransactionForm transactions={transactions} setTransactions={setTransactions} editTransaction={editTransaction} setEditTransaction={setEditTransaction} closeForm={closeForm}/>
               </div>
             </div>
         )}
