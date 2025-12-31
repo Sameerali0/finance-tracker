@@ -156,7 +156,7 @@ h1{
 }
 
 
-
+/* 
 .form{
 
     display: flex;
@@ -182,7 +182,7 @@ button{
     padding: 15px 18px;
     cursor: pointer;
 
-}
+} */
 
 
 ul{
@@ -323,4 +323,25 @@ li.expense{
         transform: rotate(360deg);
     }
   
+}
+
+
+.transaction-form-container{
+
+    width: 100%;
+}
+
+.form{
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.input-label{
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
