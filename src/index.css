@@ -185,7 +185,7 @@ button{
 
 } */
 
-
+/* 
 ul{
     list-style: none;
     padding: 10px;
@@ -211,7 +211,7 @@ li.income{
 li.expense{
 
     color: red;
-}
+} */
 
 
 .welcome-container{
@@ -517,4 +517,36 @@ li.expense{
     cursor: pointer;
     font-size: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.transaction-list-container{
+
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+.transaction-heading{
+
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c5364;
+    margin-bottom: 15px;
+}
+
+.no-transacitons{
+    text-align: center;
+    font-size: 20px;
+    color: #7c7878;
+    padding: 15px 0;
+
+}
+
+.transaction-list{
+
+    list-style: none;
+
 }
