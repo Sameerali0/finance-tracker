@@ -15,10 +15,16 @@ function TransactionList({transactions, deleteTransaction, editingTransaction}) 
                 </li>
 
                 {transactions.map((item)=>(
-                    <li key={item.id} className={item.type === "income" ? "income" : "expense"}>
-                        {item.text} - Rs {item.amount} - ({item.type}) ({item.category}) - {item.date}
+                    <li key={item.id} className={`transaction-item ${item.type === "income" ? "income" : "expense"}`}>
+                        <span>{item.text}</span>
+                        <span> Rs {item.amount}</span>
+                        <span>({item.type})</span>
+                        <span>({item.category})</span>
+                        <span>{item.date}</span>
+                        <div className="list-btns">
                             <button className="edit-btn" onClick={()=> editingTransaction(item)}>Edit</button>
                             <button className="delete-btn" onClick={()=> deleteTransaction(item.id)}>Delete</button>
+                        </div>
                     </li>
                 ))}
             </ul>
