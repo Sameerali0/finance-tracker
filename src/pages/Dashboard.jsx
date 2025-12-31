@@ -62,8 +62,10 @@ function Dashboard() {
               </div>
             </div>
         )}
-        <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
-        <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
+        <div className="filter-container">
+          <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+          <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
+        </div>
         <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
       </div>
   )

@@ -7,13 +7,14 @@
 
 body{
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+    background: #2c5364;
 }
 
 .main-container{
 
-    padding: 20px;
+    padding: 20px 20px;
     margin: auto;
+    max-width: 1200px;
 
 }
 
@@ -25,52 +26,56 @@ h1{
 
 .balance-container{
 
-    background: #8acece;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-
+    border: 1px solid white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px #00000033;
 }
 
 .balance-container h2{
-    margin-bottom: 10px;
+
     font-size: 35px;
-    font-weight: bold;
+    margin-bottom: 10px;
     text-align: center;
+    
 }
 
 .balance{
-    font-size: 20px;
-    text-align: center;
+
+    font-size: 28px;
     font-weight: bold;
+    text-align: center;
+
 }
 
 .income-expense-container{
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     margin-top: 25px;
-    gap: 80px;
+    gap: 20px;
 
 }
 
 .income-expense-container div{
 
-    width: 25%;
-    padding: 10px;
-    border-radius: 8px;
+    flex: 1;
+    padding: 18px;
+    border-radius: 14px;
     text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 
 }
 
 .income-expense-container .income{
-    background: rgb(230, 255, 243);
-    color: green;
+    background: #e9fff6;
+    color: #008000;
 }
 .income-expense-container .expense{
-    background: rgb(255, 236, 236);
-    color: red;
+    background: #ffecec;
+    color: #ff0000;
 }
 
 .income-expense-container h3{
@@ -78,6 +83,32 @@ h1{
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+.filter-container{
+
+    display: flex;
+    gap: 25px;
+    margin: 25px 0;
+
+}
+
+.filter-container label{
+
+    font-weight: bold;
+    color: white;
+
+}
+
+.filter-container select{
+
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 7px;
+}
+
 
 .transaction-form-btn{
 
