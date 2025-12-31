@@ -27,12 +27,12 @@ function ExpenseChart({transactions}){
     const COLORS = [ "#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8", "#82ca9d" ]
 
     return(
-        <div>
+        <div className="expense-chart">
             <h2>Expense by Category</h2>
 
-            {data.length === 0 ? ( <p>No expense data</p> ) :(
-                <PieChart width={1000} height={400}>
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} label>
+            {data.length === 0 ? ( <p className="no-data">No expense data</p> ) :(
+                <PieChart width={1000} height={500}>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={190} label>
                         {data.map((entry, index)=>(
                             <Cell key={index} fill={COLORS[index % COLORS.length]}/>
                         ))}

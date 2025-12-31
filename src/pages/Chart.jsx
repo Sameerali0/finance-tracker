@@ -8,7 +8,7 @@ function Chart(){
 
     return(
         <div className="chart-container">
-            <ExpenseChart transactions={transactions}/>
+                <ExpenseChart transactions={transactions}/>
         </div>
     )
 }

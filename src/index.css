@@ -447,3 +447,33 @@ li.expense{
     transform: scale(0.97);
 
 }
+
+.chart-container{
+
+    height: 100vh;
+    background: #2c5364;
+    padding: 30px 20px;
+
+}
+
+
+.expense-chart{
+
+    text-align: center;
+
+}
+
+.expense-chart h2{
+
+    font-size: 33px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.no-data{
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #a09a9a;
+
+}
