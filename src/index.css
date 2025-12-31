@@ -398,9 +398,15 @@ li.expense{
 
 }
 
+.form-btns{
+
+    display: flex;
+    gap: 13px;
+    margin-top: 12px
+}
+
 .transaction-add-btn{
 
-    margin-top: 10px;
     padding: 14px;
     border-radius: 13px;
     border: none;
@@ -413,6 +419,26 @@ li.expense{
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 
+}
+
+.cancel-btn{
+
+    padding: 14px;
+    border-radius: 13px;
+    border: 2px solid #2c5364;
+    background: transparent;
+    color: #2c5364;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.cancel-btn:hover{
+
+    background: #2c5364;
+    color: white;
 }
 
 
@@ -434,14 +460,14 @@ li.expense{
 }
 
 
-.transaction-add-btn:hover, .chart-btn:hover, .welcome-card button:hover{
+.transaction-add-btn:hover, .chart-btn:hover, .welcome-card button:hover, .cancel-btn:hover, .back-btn:hover{
 
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 
 }
 
-.transaction-add-btn:active , .chart-btn:active, .welcome-card button:active{
+.transaction-add-btn:active , .chart-btn:active, .welcome-card button:active, .cancel-btn:active, .back-btn:active {
 
     transform: scale(0.97);
 
@@ -475,4 +501,20 @@ li.expense{
     font-weight: bold;
     color: #a09a9a;
 
+}
+
+.back-btn{
+
+    position: absolute;
+    right: 30px;
+    top: 34px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

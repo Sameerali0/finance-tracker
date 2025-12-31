@@ -102,8 +102,10 @@ function TransactionForm({transactions, setTransactions, editTransaction, setEdi
                 </div>
             </div>
 
-            <button className="transaction-add-btn">{editTransaction ? "Update Transaction" : "Add Transaction"}</button>
-            <button className="cancel-btn" onClick={closeForm}>Cancel</button>
+            <div className="form-btns">
+                <button className="transaction-add-btn">{editTransaction ? "Update Transaction" : "Add Transaction"}</button>
+                <button className="cancel-btn" type="button" onClick={closeForm}>Cancel</button>
+            </div>    
         </form>
         </div>
     )
