@@ -19,6 +19,7 @@ function Dashboard() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedMonth, setSelectedMonth] = useState("All")
   const [showForm, setShowForm] = useState(false)
+  const [editTransaction, setEditTransaction] = useState(null)
 
   useEffect(()=>{
       localStorage.setItem("transactions", JSON.stringify(transactions))
@@ -31,6 +32,12 @@ function Dashboard() {
       )
       
       setTransactions(updatedTransactions)
+  }
+
+  function editingTransaction(transaction){
+
+      setEditTransaction(transaction)
+      setShowForm(true)
   }
 
   
@@ -57,8 +64,8 @@ function Dashboard() {
         {showForm && (
             <div className="transaction-form">
               <div className="transaction-form-card">
-                <h2>Add Transaction</h2>
-                <TransactionForm transactions={transactions} setTransactions={setTransactions}/>
+                <h2>{editTransaction? "Edit Transaction" : "Add Transaction"}</h2>
+                <TransactionForm transactions={transactions} setTransactions={setTransactions} editTransaction={editTransaction} setEditTransaction={setEditTransaction}/>
               </div>
             </div>
         )}
@@ -66,7 +73,7 @@ function Dashboard() {
           <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
           <MonthFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth}/>
         </div>
-        <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction}/>
+        <TransactionList transactions={filteredTransactions} deleteTransaction={deleteTransaction} editingTransaction={editingTransaction}/>
       </div>
   )
 }

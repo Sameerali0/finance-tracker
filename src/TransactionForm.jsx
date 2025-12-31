@@ -1,12 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function TransactionForm({transactions, setTransactions}) {
+function TransactionForm({transactions, setTransactions, editTransaction, setEditTransaction}) {
 
     const [text, setText] = useState("")
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
     const [category, setCategory] = useState("Food")
     const [date, setDate] = useState("")
+
+    useEffect(()=>{
+        if(editTransaction){
+
+            setText(editTransaction.text)
+            setAmount(editTransaction.amount)
+            setType(editTransaction.type)
+            setCategory(editTransaction.category)
+            setDate(editTransaction.date)
+
+        }
+    }, [editTransaction])
 
     function addTransaction(e) {
         e.preventDefault()
@@ -16,18 +28,30 @@ function TransactionForm({transactions, setTransactions}) {
             return
         }
 
-        const newTransaction ={
+        if(editTransaction){
+            const updatedTransactions= transactions.map(item => item.id === editTransaction.id 
+                ? { ...editTransaction, text, amount: Number(amount), type, category, date}
+                : item    
 
-            id: Date.now(),
-            text,
-            amount: Number(amount),
-            type,
-            category,
-            date,
-            
+            )
+
+            setTransactions(updatedTransactions)
+            setEditTransaction(null)
+
+        }else{
+            const newTransaction ={
+
+                id: Date.now(),
+                text,
+                amount: Number(amount),
+                type,
+                category,
+                date,
+                
+            }
+
+            setTransactions([newTransaction, ...transactions])
         }
-
-        setTransactions([newTransaction, ...transactions])
 
         setText("")
         setAmount("")
@@ -73,7 +97,7 @@ function TransactionForm({transactions, setTransactions}) {
                 </div>
             </div>
 
-            <button className="transaction-add-btn">Add Transaction</button>
+            <button className="transaction-add-btn">{editTransaction ? "Update Transaction" : "Add Transaction"}</button>
         </form>
         </div>
     )
