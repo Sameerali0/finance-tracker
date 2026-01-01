@@ -46,3 +46,12 @@ I took only a little help from AI for the expense chart
 
 ## I learned most of react from this video:
 https://youtu.be/3LRZRSIh_KE?si=bjRZ9AG1TRgVoSEk
+
+## Project Screenshots
+![Screenshot](src/assets/welcomeScreenshot.png)
+![Screenshot](src/assets/loadingScreenshot.png)
+![Screenshot](src/assets/dashboardScreenshot.png)
+![Screenshot](src/assets/listScreenshot.png)
+![Screenshot](src/assets/chartScreenshot.png)
+![Screenshot](src/assets/addFormScreenshot.png)
+![Screenshot](src/assets/editFormScreenshot.png)
