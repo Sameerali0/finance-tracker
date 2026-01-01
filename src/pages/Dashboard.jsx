@@ -56,12 +56,7 @@ function Dashboard() {
       return categoryMatch && monthMacth
 
   })
-   
-  console.log(transactions)
   
-  console.log(selectedCategory)
-  
-
   return (
       <div className="main-container">
         <h1>Finance Tracker</h1>
