@@ -460,14 +460,14 @@ li.expense{
 }
 
 
-.transaction-add-btn:hover, .chart-btn:hover, .welcome-card button:hover, .cancel-btn:hover, .back-btn:hover{
+.transaction-add-btn:hover, .chart-btn:hover, .welcome-card button:hover, .cancel-btn:hover, .back-btn:hover, .edit-btn:hover, .delete-btn:hover, .transaction-item:hover{
 
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 
 }
 
-.transaction-add-btn:active , .chart-btn:active, .welcome-card button:active, .cancel-btn:active, .back-btn:active {
+.transaction-add-btn:active , .chart-btn:active, .welcome-card button:active, .cancel-btn:active, .back-btn:active, .edit-btn:active, .delete-btn:active {
 
     transform: scale(0.97);
 
@@ -558,6 +558,7 @@ li.expense{
     padding: 12px;
     font-weight: bold;
     color: #2c5364;
+    margin-bottom: 13px;
 
 }
 
@@ -571,10 +572,67 @@ li.expense{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
     padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 }
 
 .transaction-item span{
     font-size: 18px;
+    display: flex;
+    align-items: center;
 
+}
+
+
+.transaction-item.income{
+    
+    color: green;
+    border-left: 5px solid green;
+}
+
+.transaction-item.expense{
+
+    color: red;
+    border-left: 5px solid red;
+}
+
+.type, .category{
+
+    text-transform: capitalize;
+    font-weight: 500;
+
+}
+
+.list-btns{
+
+    display: flex;
+    gap: 30px;
+    margin-left: 5px;
+}
+
+.edit-btn, .delete-btn{
+
+    padding: 10px 23px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.edit-btn{
+
+    background: #2c5364;
+    color: white;
+
+}
+
+.delete-btn{
+
+    background: #ff4d4d;
+    color: white;
 }

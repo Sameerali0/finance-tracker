@@ -18,8 +18,8 @@ function TransactionList({transactions, deleteTransaction, editingTransaction}) 
                     <li key={item.id} className={`transaction-item ${item.type === "income" ? "income" : "expense"}`}>
                         <span>{item.text}</span>
                         <span> Rs {item.amount}</span>
-                        <span>({item.type})</span>
-                        <span>({item.category})</span>
+                        <span className="type">{item.type}</span>
+                        <span className="category">{item.category}</span>
                         <span>{item.date}</span>
                         <div className="list-btns">
                             <button className="edit-btn" onClick={()=> editingTransaction(item)}>Edit</button>
