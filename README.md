@@ -19,3 +19,12 @@ The main goal of this project was to track income and expenses, calculate the ba
 * Month wise filtering
 * Expense Pie Chart (Recharts)
 * Data saved using LocalStorage
+
+# Technologies Used
+## In this project what i used:
+* React.js (functional components)
+* React Router DOM (for page navigation)
+* Recharts (for expense pie chart)
+* CSS (pure custom styling)
+* LocalStorage (for saving data)
+* JavaScript (ES6+)
