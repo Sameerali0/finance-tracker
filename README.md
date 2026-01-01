@@ -28,3 +28,6 @@ The main goal of this project was to track income and expenses, calculate the ba
 * CSS (pure custom styling)
 * LocalStorage (for saving data)
 * JavaScript (ES6+)
+
+## Expense Chart
+The expense chart is made using Recharts PieChart.It shows expenses by category only expense transactions are shown, income is not included.
