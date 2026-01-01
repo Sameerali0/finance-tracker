@@ -20,8 +20,8 @@ The main goal of this project was to track income and expenses, calculate the ba
 * Expense Pie Chart (Recharts)
 * Data saved using LocalStorage
 
-# Technologies Used
-## In this project what i used:
+## Technologies Used
+In this project what i used:
 * React.js (functional components)
 * React Router DOM (for page navigation)
 * Recharts (for expense pie chart)
@@ -31,3 +31,7 @@ The main goal of this project was to track income and expenses, calculate the ba
 
 ## Expense Chart
 The expense chart is made using Recharts PieChart.It shows expenses by category only expense transactions are shown, income is not included.
+
+## Data Storage
+This project does not use a backend.
+All data is saved in the browser’s LocalStorage, so it stays safe even after refreshing the page.
