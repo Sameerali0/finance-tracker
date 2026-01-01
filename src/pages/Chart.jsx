@@ -1,11 +1,10 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ExpenseChart from "../charts/ExpenseChart";
 
 function Chart(){
 
     const goTo= useNavigate()
-    const {state} = useLocation()
-    const transactions = state?.transactions || []
+    const transactions = JSON.parse( localStorage.getItem("transactions")) || []
 
     return(
         <div className="chart-container">

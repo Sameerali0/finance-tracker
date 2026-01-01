@@ -66,7 +66,7 @@ function Dashboard() {
       <div className="main-container">
         <h1>Finance Tracker</h1>
         <Balance transactions={transactions}/>
-        <button className="chart-btn" onClick={() => goTo("/chart", {state: {transactions}})}>View Expense Chart</button>
+        <button className="chart-btn" onClick={() => goTo("/chart")}>View Expense Chart</button>
         <button className="transaction-form-btn" onClick={()=> setShowForm(true)}>+</button>
         {showForm && (
             <div className="transaction-form">
